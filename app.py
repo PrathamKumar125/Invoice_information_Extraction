@@ -59,8 +59,6 @@ def input_file_setup(uploaded_file):
 st.set_page_config(page_title="Invoice Information Extractor", page_icon="🔮")
 st.title("Invoice Information Extractor 📃")
 
-st.write("Upload your invoice (image or PDF)")
-
 # Display sample prompts
 
 uploaded_file = st.file_uploader("Upload an Invoice Image 🖼️ or PDF 📄", type=["jpg", "jpeg", "png", "pdf"])
@@ -71,7 +69,6 @@ selected = sp.pills(" Ask a question related to the invoice. Here are some examp
                          'What is the information about the Products?'],
                         clearable=True,index=None)
 
-# input_query = st.text_input("Ask a question about the invoice", key="input")
 input_query = selected if selected else st.text_input("Ask a question about the invoice", key="input")
 
 if uploaded_file is not None:
